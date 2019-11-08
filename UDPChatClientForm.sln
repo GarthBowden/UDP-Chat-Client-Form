@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UDPChatClientForm", "UDPChatClientForm.csproj", "{671DC6B7-0EE5-4036-8CCD-94DD9C0FBA94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UDPAsynchronousChat", "..\UDPAsynchronousChat\UDPAsynchronousChat.csproj", "{FDFD0193-1C2F-4473-BFF0-2CF821CC5710}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{671DC6B7-0EE5-4036-8CCD-94DD9C0FBA94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{671DC6B7-0EE5-4036-8CCD-94DD9C0FBA94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{671DC6B7-0EE5-4036-8CCD-94DD9C0FBA94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{671DC6B7-0EE5-4036-8CCD-94DD9C0FBA94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDFD0193-1C2F-4473-BFF0-2CF821CC5710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDFD0193-1C2F-4473-BFF0-2CF821CC5710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDFD0193-1C2F-4473-BFF0-2CF821CC5710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDFD0193-1C2F-4473-BFF0-2CF821CC5710}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88DC866F-2176-4F21-BE15-3BBACFC83CCC}
+	EndGlobalSection
+EndGlobal
