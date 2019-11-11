@@ -13,7 +13,7 @@ namespace UDPChatClientForm
 {
     public partial class Form1 : Form
     {
-        UDPAsynchronousChat.UDPAsyncChatClient mClient;
+        UDPAsyncChatClient mClient;
         public Form1()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace UDPChatClientForm
                     && localPort >= 0 && localPort <= 65535
                     && RemotePort >= 0 && RemotePort <= 65535)
                 {
-                    mClient = new UDPAsynchronousChat.UDPAsyncChatClient(localPort, RemotePort);
+                    mClient = new UDPAsyncChatClient(localPort, RemotePort);
                     mClient.RaiseTextUpdateEvent += ConsoleTextUpdate;
 
                 }
@@ -45,10 +45,27 @@ namespace UDPChatClientForm
             mClient.SendBroadcast(tbBroadcastText.Text);
         }
 
+        delegate void ConsoleTextUpdateCallback(object sender, TextUpdateEventArgs e);
+
         private void ConsoleTextUpdate(object sender, TextUpdateEventArgs e)
         {
-            tbConsole.AppendText(e.Text + Environment.NewLine);
+            if(this.tbConsole.InvokeRequired)
+            {
+                ConsoleTextUpdateCallback d = new ConsoleTextUpdateCallback(ConsoleTextUpdate);
+                this.Invoke(d, new object[] { sender, e });
+
+            }
+            else
+            {
+                tbConsole.AppendText(e.Text + Environment.NewLine);
+            }
+
             Console.WriteLine(e.Text);
+        }
+
+        private void btnSendMessage_Click(object sender, EventArgs e)
+        {
+            mClient.SendMessageToKnownServer(tbBroadcastText.Text);
         }
     }
 }
